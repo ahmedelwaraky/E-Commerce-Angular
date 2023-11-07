@@ -1,0 +1,31 @@
+<div class="container">
+    <div class="bg-light p-4  my-4 rounded-5 shadow-lg m-auto w-75" >
+        <h2> shop Cart</h2>
+        <h6 class="lead text-success">Total Price: {{cartDetails.totalCartPrice}} </h6>
+        <div *ngFor="let producty of cartDetails?.products " class=" border-bottom py-2 ">
+            <div class="row rounded-5 shadow-lg d-flex justify-content-between"> 
+                <div class="col-md-2">
+                    <img src= {{producty.product.imageCover}} alt="" class="w-75 rounded-5 shadow-lg">
+                </div>
+    
+                <div class="col-md-10 d-flex justify-content-between align-items-center">
+                    <div class="">
+                        <h6>Title: {{producty.product.title}}</h6>
+                        <h6 class="text-success">Price: {{producty.price}}</h6>
+                        <button (click)="removeItem(producty.product._id)"  class="btn m-0 p-0"><i class="fa-regular fa-trash-can  text-success fs-4 mx-1"></i>Remove</button>
+                    </div>
+                    <div class="">
+                        <button (click)="update(producty.product._id , producty.count+1)" class="btn btn-outline-success">+</button>
+                        <span class="mx-2 fs-5">{{producty.count}}</span>
+                        <button  (click)="update(producty.product._id , producty.count-1)" class="btn btn-outline-danger">-</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="text-center ">
+            <button  class="col-4 btn btn-success my-2 m-auto">
+                <a class="text-white" routerLink='/checkout'>Online Payment</a>
+            </button>
+        </div>
+    </div>
+</div>

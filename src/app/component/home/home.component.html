@@ -1,0 +1,33 @@
+<app-slider> </app-slider>
+<div class="container">
+    <div class="row">
+        <div *ngFor="let productx of products" class="col-md-3">
+            <div class="product card gap-4 my-4 shadow rounded-5">
+                <img class="w-75 m-auto" src={{productx.imageCover}}>
+                <div class="card-body">
+                    <h2 class="h6 text-success">{{productx.category.name}}</h2>
+                    <h2 class="h4 text-info-emphasis">{{productx.title.split(" ").slice(0,2).join(" ")}}</h2>
+                    <div class="up d-flex justify-content-between">
+                        <!-- <p>Quanatity :{{productx.quantity}}</p> -->
+                        <!-- <p>Brand : {{productx.brand.name}}</p> -->
+                    </div>
+                    <div class="down d-flex justify-content-between">
+                        <p class="text-danger">Price :{{productx.price | currency}}</p>
+                        <p><i class="fas fa-star text-warning"></i>
+                            {{productx.ratingsAverage}}</p>
+                    </div>
+                    <hr>
+                    <div class="icons d-flex justify-content-around">
+                        <i class="fa-regular fa-heart fs-6 text-danger" style="cursor: pointer;"></i>
+                        <i (click)="addCart(productx._id)" class="fa-solid fa-cart-shopping fs-6 text-success"  style="cursor: pointer;"></i>
+                        <i  [routerLink]="['/product/details' , productx._id]" class="fa-regular fa-eye fs-6 text-warning"  style="cursor: pointer;"></i>
+                    </div>
+                </div>
+            </div>
+            <a>
+                
+            </a>
+
+        </div>
+    </div>
+</div> 

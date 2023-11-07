@@ -1,0 +1,62 @@
+<section class="one">
+    <div class="socail-call bg-light ">
+        <div class="socail">
+            <a href="#"><i class="fab fa-facebook text-dark"></i></a>
+            <a href="#"><i class="fab fa-twitter text-dark"></i></a>
+            <a href="#"><i class="fab fa-instagram text-dark"></i></a>
+            <a href="#"><i class="fab fa-youtube text-dark"></i></a>
+        </div>
+        <div class="phone">
+            <span class="text-dark">Call + 01099800532</span>
+        </div>
+    </div>
+    <nav class="navbar navbar-expand-lg bg-dark">
+        <div class="container">
+            <a class="navbar-brand text-white me-5 " href="#"><img src="assets\images\yii3_sign.png" style="width: 30px;"></a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse " id="navbarSupportedContent">
+                <ul class="navbar-nav m-auto mb-2 mb-lg-0">
+                    <li *ngIf="isLogin" class="nav-item">
+                        <a class="nav-link text-white" routerLink="home" style="font-weight: 
+                        100;">Home</a>
+                    </li>
+                    <li *ngIf="isLogin"  class="nav-item">
+                        <a class="nav-link text-white" routerLink="about" style="font-weight: 
+                        100;">About</a>
+                    </li>
+                    <li *ngIf="isLogin" class="nav-item">
+                        <a class="nav-link text-white" routerLink="product" style="font-weight: 
+                        100;">Product</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                    <li *ngIf="!isLogin" class="nav-item">
+                        <a class="nav-link text-warning" routerLink="register">Register</a>
+                    </li>
+                    <li *ngIf="!isLogin" class="nav-item">
+                        <a class="nav-link text-success" routerLink="login">Login</a>
+                    </li>
+                    <li *ngIf="isLogin" class="nav-item">
+                        <a class="nav-link text-white  position-relative p-3" routerLink="cart" style="font-weight:100;">
+                            <i class="fa-brands fa-opencart fs-5"></i>
+                            <span class="badge bg-warning text-white position-absolute top-0 end-0 rounded-pill">{{cartNumber }}</span>
+                        </a>
+                    </li>
+                    <li *ngIf="isLogin" class="nav-item">
+                        <a class="nav-link text-light" routerLink="settings">
+                            <i class="fa-solid fa-sliders"></i>
+                        </a>
+                    </li>
+                    <li (click)="logOut()" *ngIf="isLogin" class="nav-item">
+                        <a class="nav-link text-danger">LogOut</a>
+                    </li>
+                    
+                </ul>
+                <form class="d-flex" role="search">
+                </form>
+            </div>
+            </div>
+    </nav>
+</section>

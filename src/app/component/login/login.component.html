@@ -1,0 +1,35 @@
+<section class="my-5">
+    <div class="container">
+        <div class="main-header">
+            <h1 class=" text-center">Login</h1>
+        </div>
+
+        <!-- Api Error -->
+        <div *ngIf="apiError" class="apierror alert alert-danger">
+            {{apiError}}
+        </div>
+
+
+        <form [formGroup]="loginForm" (ngSubmit)="handlelogin(loginForm)">
+            
+            <input formControlName="email" class="form-control my-5"  type="text" name="email" placeholder="E-mail" />
+            <div *ngIf="loginForm.get('email')?.errors && loginForm.get('email')?.touched" class="alert alert-danger">
+                <p *ngIf="loginForm.get('email')?.getError('email')"  class="mb-0"> Email IS Valid</p>
+                <p *ngIf="loginForm.get('email')?.getError('required')"   class="mb-0"> Email Is Required</p>
+            </div>
+
+            <input formControlName="password" class="form-control my-5"  type="password" name="password" placeholder="Password" />
+            <div *ngIf="loginForm.get('password')?.errors && loginForm.get('password')?.touched" class="alert alert-danger">
+                <p *ngIf="loginForm.get('password')?.getError('pattern')"  class="mb-0"> Password must start with UpperCase then 3 to 10</p>
+                <p *ngIf="loginForm.get('password')?.getError('required')"   class="mb-0"> Password Is Required</p>
+            </div>
+            
+            <button  [disabled]="loginForm.invalid" class="btn btn-success" type="submit" >
+                <i *ngIf="isLoading" class=" fas fa-spinner fa-spin"></i>
+                <span *ngIf="!isLoading">login</span>
+            </button>
+        </form>
+
+    </div>
+            
+</section>

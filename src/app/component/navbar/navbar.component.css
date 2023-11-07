@@ -1,0 +1,52 @@
+.one{
+    position: sticky;
+    top: 0;
+    z-index: 20;
+}
+.socail-call{
+    height: 40px;
+    border: 1px solid  rgba(0, 0, 0, 0.05);
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+}
+.socail a{
+    margin: 0px 5px;
+    color:#fff;
+    font-size: 0.9rem;
+    transition: color .5s  ease-in-out;
+}
+.phone{
+    color: #fff;
+    margin-left: 30px;
+    font-size: 0.9rem;
+}
+.socail a:hover{
+    color:orange;
+}
+.menu{
+    display: flex;
+    padding-right: 150px;
+}
+.menu  li{
+    position: relative;
+    margin: 0 10px;
+    display: flex;
+    text-transform: uppercase;
+    font-weight: 200;
+}
+.right-menu {
+    margin-right: 20px;
+}
+.right-menu a{
+    margin: 10px 10px;
+    font-size: 16px;
+    color: #000;
+    transition: color .5s  ease-in-out;
+}
+.menu a:hover ,
+.right-menu a:hover,
+.search-cancel:hover{
+    color:orange;
+}
